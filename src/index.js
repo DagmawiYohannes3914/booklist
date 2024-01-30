@@ -2,17 +2,36 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 const BookList = () => {
-  return <section></section>;
+  return (
+    <section>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  );
 };
 
 const Book = () => {
-  return <article></article>;
+  return (
+    <article>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
 };
 
-const Image = () => <h2>image plaeholder</h2>;
-const Title = () => <h2>Book Title</h2>;
+const Image = () => (
+  <img
+    src="https://images-na.ssl-images-amazon.com/images/I/91jbHTNpy6L._AC_UL900_SR900,600_.jpg"
+    alt="House of Flame and shadows"
+  />
+);
+
+const Title = () => <h2>House of Flame and shadows</h2>;
 const Author = () => {
-  return <h4>Author</h4>;
+  return <h4>Sarah J</h4>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
