@@ -13,7 +13,7 @@ const books = [
   {
     author: "James Clear",
     title: "Atomic Habits",
-    img: "https://images-na.ssl-images-amazon.com/images/I/81YkqyaFVEL._AC_UL900_SR900,600_.jpg",
+    img: "./images/atomic.jpg",
     id: "2",
   },
 ];
