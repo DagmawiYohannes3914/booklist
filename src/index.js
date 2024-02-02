@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import "./index.css";
+// import { hasFormSubmit } from "@testing-library/user-event/dist/utils";
 
 const books = [
   {
@@ -30,15 +31,22 @@ const BookList = () => {
 };
 
 const EventExamples = () => {
-  const handleformInput = () => {
+  const handleformInput = (e) => {
     console.log("handle form input");
+    console.log(e.target);
+    console.log(e.target.name);
+    console.log(e.target.value);
   };
   const handlebuttonclick = () => {
     alert("handle form button");
   };
+  const handleFormSubmission = (e) => {
+    e.preventDefault();
+    console.log("handle form submission");
+  };
   return (
     <section>
-      <form>
+      <form onSubmit={handleFormSubmission}>
         <h2>Typical Form</h2>
         <input
           type="text"
@@ -46,8 +54,12 @@ const EventExamples = () => {
           onChange={handleformInput}
           style={{ margin: "1rem 0" }}
         />
+        <button type="submit">Submit</button>
+        {/* <button type="submit" onClick={handleFormSubmission}>Submit</button> */}
+        <div>
+          <button onClick={handlebuttonclick}>click me</button>
+        </div>
       </form>
-      <button onClick={handlebuttonclick}>click me</button>
     </section>
   );
 };
